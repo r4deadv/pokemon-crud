@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pokemon service update 1`] = `
+Object {
+  "cp": 5,
+  "hp": 25,
+  "id": 1,
+  "name": "Rade",
+  "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
+  "types": Array [
+    "Plante",
+    "Poison",
+  ],
+}
+`;

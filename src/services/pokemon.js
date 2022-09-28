@@ -1,3 +1,4 @@
+const pokemon = require("../controllers/pokemon");
 const pokemons = require("../db/mock-pokemon");
 
 module.exports = {
@@ -18,6 +19,10 @@ module.exports = {
     pokemons.push(pokemon);
     return pokemons[10];
   },
-  update: (id) => {},
+  update: (id, data) => {
+    const pokemonIndex = pokemons.findIndex((pokemon) => pokemon.id === id);
+    pokemons[pokemonIndex] = { ...pokemons[pokemonIndex], name: data.name };
+    return pokemons[pokemonIndex];
+  },
   deleteOne: (id) => {},
 };
