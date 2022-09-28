@@ -12,7 +12,7 @@ app
   .use(cors());
 
 app.get("/", (req, res) => {
-  res.json("Hello, App! 👋 ");
+  res.json("Hello, App! 👋");
 });
 
 require("./src/routes/pokemon")(app);
