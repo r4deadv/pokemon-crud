@@ -36,4 +36,15 @@ describe("Pokemon service", () => {
 
     expect(data.name).toEqual("Groupix");
   });
+
+  test("update", () => {
+    const mock = {
+      name: "Rade",
+    };
+    expect(getOne(1).name).toEqual("Bulbizarre");
+    const data = update(1, mock);
+    expect(data.name).toEqual("Rade");
+    expect(data.cp).toEqual(5);
+    expect(data).toMatchSnapshot();
+  });
 });
