@@ -1,6 +1,9 @@
 const { getAll, getOne, create, update, deleteOne } = require("./pokemon");
+const pokemons = require("../db/mock-pokemon");
 
 describe("Pokemon service", () => {
+  beforeEach(() => {});
+
   test("getAll", () => {
     const data = getAll();
 
@@ -16,5 +19,21 @@ describe("Pokemon service", () => {
     const data = getOne(0);
     expect(data.code).toEqual(401);
     expect(data.message).toEqual("Not found");
+  });
+
+  test("create", () => {
+    const mock = {
+      name: "Groupix",
+      hp: 17,
+      cp: 8,
+      picture:
+        "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/037.png",
+      types: ["Feu"],
+    };
+    expect(pokemons.length).toEqual(10);
+    const data = create(mock);
+    expect(pokemons.length).toEqual(11);
+
+    expect(data.name).toEqual("Groupix");
   });
 });

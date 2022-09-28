@@ -14,7 +14,10 @@ module.exports = {
     }
     return pokemon;
   },
-  create: () => {},
+  create: (pokemon) => {
+    pokemons.push(pokemon);
+    return pokemons[10];
+  },
   update: (id) => {},
   deleteOne: (id) => {},
 };
